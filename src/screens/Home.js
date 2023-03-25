@@ -1,13 +1,25 @@
 import React from "react";
 
-import { SafeAreaView, Text, View } from 'react-native';
+import { Image, SafeAreaView, View } from 'react-native';
+import { NavOptions } from "../components/NavOptions";
+
+import logoImg from '../assets/logo.png';
 
 export function Home() {
   return (
-    <SafeAreaView className="flex-1 items-center justify-center bg-white">
-      <Text>
-        Uber Clone
-      </Text>
+    <SafeAreaView className="bg-white h-full">
+      <View className="p-5">
+        <Image
+          style={{
+            width: 100,
+            height: 100,
+            resizeMode: 'contain'
+          }}
+          source={logoImg}
+        />
+
+        <NavOptions />
+      </View>
     </SafeAreaView>
   );
 }
