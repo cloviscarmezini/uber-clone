@@ -1,16 +1,17 @@
 import React from "react";
 
 import { SafeAreaView, Text, View } from 'react-native';
+import { Map } from "../components/Map";
 
 export function MapScreen() {
   return (
-    <SafeAreaView className="bg-white h-full">
-      <View className="h1/2">
-      
+    <View>
+      <View className="h-1/2">
+        <Map />
       </View>
-      <View className="h1/2">
+      <View className="h-1/2">
 
       </View>
-    </SafeAreaView>
+    </View>
   );
 }
