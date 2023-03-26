@@ -4,9 +4,14 @@ import { Image, SafeAreaView, View } from 'react-native';
 import { NavOptions } from "../components/NavOptions";
 import { GooglePlacesAutocomplete } from "react-native-google-places-autocomplete";
 
-import logoImg from '../assets/logo.png';
+import { useDispatch } from "react-redux";
+import { setDestination, setOrigin } from "../slices/navSlice";
+
+import logoImg from "../assets/logo.png";
 
 export function Home() {
+  const dispatch = useDispatch();
+
   return (
     <SafeAreaView className="bg-white h-full">
       <View className="p-5">
@@ -35,8 +40,12 @@ export function Home() {
           }}
           fetchDetails
           onPress={(data, details = null) => {
-            // 'details' is provided when fetchDetails = true
-            console.log({data, details});
+            dispatch(setOrigin({
+              location: details.geometry.location,
+              description: data.description
+            }))
+
+            dispatch(setDestination(null))
           }}
           enablePoweredByContainer={false}
           minLength={2}
