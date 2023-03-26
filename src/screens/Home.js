@@ -9,7 +9,7 @@ import { setDestination, setOrigin } from "../slices/navSlice";
 
 import logoImg from "../assets/logo.png";
 
-export function Home() {
+export function HomeScreen() {
   const dispatch = useDispatch();
 
   return (

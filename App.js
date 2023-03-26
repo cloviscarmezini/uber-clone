@@ -2,8 +2,8 @@ import { Provider } from 'react-redux';
 import { store } from './src/store';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 
-import { Home } from './src/screens/Home';
-import { Map } from './src/screens/Map';
+import { HomeScreen } from './src/screens/Home';
+import { MapScreen } from './src/screens/Map';
 
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
@@ -22,11 +22,11 @@ export default function App() {
           >
             <Screen
               name='home'
-              component={Home}
+              component={HomeScreen}
             />
             <Screen
               name='map'
-              component={Map}
+              component={MapScreen}
             />
           </Navigator>
         </SafeAreaProvider>
