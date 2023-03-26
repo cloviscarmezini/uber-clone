@@ -17,7 +17,6 @@ export function Home() {
           }}
           source={logoImg}
         />
-
         <NavOptions />
       </View>
     </SafeAreaView>
