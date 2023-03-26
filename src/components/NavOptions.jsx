@@ -5,6 +5,8 @@ import { Icon } from "react-native-elements";
 import uberXImg from "../assets/uberX.png";
 import uberFoodImg from "../assets/uberFood.png";
 import { useNavigation } from "@react-navigation/native";
+import { useSelector } from "react-redux";
+import { selectOrigin } from "../slices/navSlice";
 
 const data = [
   {
@@ -23,6 +25,7 @@ const data = [
 
 export function NavOptions() {
   const navigation = useNavigation();
+  const origin = useSelector(selectOrigin);
 
   function handleNavigateToScreen(screen) {
     navigation.navigate(screen);
@@ -37,8 +40,11 @@ export function NavOptions() {
         <TouchableOpacity
             className="p-2 pl-6 pb-8 pt-4 bg-gray-200 m-2 w-40"
             onPress={() => handleNavigateToScreen(item.screen)}
+            disabled={!origin}
         >
-          <View>
+          <View
+            className={origin ? 'opacity-100' : 'opacity-50'}
+          >
             <Image
               style={{
                 width: 120,
