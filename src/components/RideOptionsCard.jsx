@@ -100,7 +100,9 @@ export function RideOptionsCard() {
         )}
       />
 
-      <View>
+      <View
+        className="mt-auto border-t border-gray-200"
+      >
         <TouchableOpacity
           disabled={!selected.id}
           className={`py-3 px-4 m-3 ${selected.id ? 'bg-black' : 'bg-gray-300'}`}
