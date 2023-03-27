@@ -1,9 +1,7 @@
 import React from "react";
-import { FlatList, Image, Text, TouchableOpacity, View } from "react-native";
+import { FlatList, Text, TouchableOpacity, View } from "react-native";
 import { Icon } from "react-native-elements";
 
-import uberXImg from "../assets/uberX.png";
-import uberFoodImg from "../assets/uberFood.png";
 import { useNavigation } from "@react-navigation/native";
 
 const data = [
@@ -24,10 +22,6 @@ const data = [
 export function NavFavorites() {
   const navigation = useNavigation();
 
-  function handleNavigateToScreen(screen) {
-    navigation.navigate(screen);
-  }
-
   return (
     <FlatList
       data={data}
@@ -41,7 +35,6 @@ export function NavFavorites() {
       renderItem={({ item }) => (
         <TouchableOpacity
           className="flex-row items-center p-5"
-          onPress={() => handleNavigateToScreen(item.screen)}
         >
           <Icon
             className="mr-4 rounded-full bg-gray-300 p-3"
