@@ -1,12 +1,13 @@
+import { KeyboardAvoidingView, Platform } from 'react-native';
 import { Provider } from 'react-redux';
-import { store } from './src/store';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 import { HomeScreen } from './src/screens/Home';
 import { MapScreen } from './src/screens/Map';
 
-import { NavigationContainer } from '@react-navigation/native';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { store } from './src/store';
 
 const { Navigator, Screen } = createNativeStackNavigator();
 
@@ -15,20 +16,26 @@ export default function App() {
     <Provider store={store}>
       <NavigationContainer>
         <SafeAreaProvider>
-          <Navigator
-            screenOptions={{
-              headerShown: false
-            }}
+          <KeyboardAvoidingView
+            className="flex-1"
+            behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
+            keyboardVerticalOffset={Platform.OS === 'ios' ? -64 : 0}
           >
-            <Screen
-              name='home'
-              component={HomeScreen}
-            />
-            <Screen
-              name='map'
-              component={MapScreen}
-            />
-          </Navigator>
+            <Navigator
+              screenOptions={{
+                headerShown: false
+              }}
+            >
+              <Screen
+                name='home'
+                component={HomeScreen}
+              />
+              <Screen
+                name='map'
+                component={MapScreen}
+              />
+            </Navigator>
+          </KeyboardAvoidingView>
         </SafeAreaProvider>
       </NavigationContainer>
     </Provider>
