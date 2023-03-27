@@ -36,8 +36,6 @@ export function Map() {
   useEffect(() => {
     if(!origin || !destination) return;
 
-    console.log('ey')
-
     async function getTravelTime() {
       fetch(`https://maps.googleapis.com/maps/api/distancematrix/json?destinations=${destination.description}&origins=${origin.description}&units=kilometers&key=${GOOGLE_MAPS_APIKEY}&language=en`)
         .then(response=>response.json())
