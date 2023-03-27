@@ -1,5 +1,6 @@
 import React from "react";
 import { SafeAreaView, StyleSheet, Text, View } from "react-native";
+import { NavFavorites } from "./NavFavorites";
 
 import { useDispatch } from "react-redux";
 import { setDestination } from "../slices/navSlice";
@@ -48,6 +49,8 @@ export function NavigateCard() {
                         }}
                     />
                 </View>
+
+                <NavFavorites />
             </View>
         </SafeAreaView>
     );

@@ -8,6 +8,7 @@ import { useDispatch } from "react-redux";
 import { setDestination, setOrigin } from "../slices/navSlice";
 
 import logoImg from "../assets/logo.png";
+import { NavFavorites } from "../components/NavFavorites";
 
 export function HomeScreen() {
   const dispatch = useDispatch();
@@ -56,6 +57,7 @@ export function HomeScreen() {
         />
 
         <NavOptions />
+        <NavFavorites />
       </View>
     </SafeAreaView>
   );
