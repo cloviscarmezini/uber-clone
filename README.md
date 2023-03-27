@@ -1,4 +1,4 @@
-![App Screenshot](.github/cover.png)
+![App Screenshot](.github/cover.gif)
 
 # UBER UI Clone
 UBER UI Clone App with purpose of studies.
